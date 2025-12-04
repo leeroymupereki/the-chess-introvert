@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Chess Introvert</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Chess Introvert — Simple Version</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial;
+      text-align: center;
+    }
+    #board {
+      width: 480px;
+      height: 480px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      margin: 20px auto;
+      border: 3px solid #333;
+    }
+    .square {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    .light { background: #eee; }
+    .dark  { background: #769656; }
+    .selected { outline: 3px solid yellow; }
+  </style>
 </head>
 <body>
 
-<h1>♟ Chess Introvert</h1>
-
-<div id="top-controls">
-  <label>Bot Difficulty:</label>
-  <select id="difficulty">
-    <option>Beginner</option>
-    <option>Advanced</option>
-    <option>Master</option>
-    <option>Expert</option>
-    <option>Grandmaster</option>
-  </select>
-
-  <button onclick="undoMove()">Undo</button>
-  <button onclick="restartGame()">Restart</button>
-</div>
-
-<div id="timer">00:00</div>
-
+<h1>Chess Introvert — Simple Web Version</h1>
 <div id="board"></div>
 
 <script src="chess.js"></script>
-<script src="bots.js"></script>
-<script src="script.js"></script>
+<script src="board.js"></script>
 
 </body>
 </html>
